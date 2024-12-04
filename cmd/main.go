@@ -18,16 +18,13 @@ func main() {
 	}
 	defer database.Close()
 
-	// Create a Gin router
 	r := gin.Default()
 
-	// Define API routes
 	r.POST("/set", handleSet)
 	r.GET("/get", handleGet)
 	r.DELETE("/delete", handleDelete)
 
-	// Start the server
-	r.Run(":8080") // Listen on port 8080
+	r.Run(":8080")
 }
 
 func handleSet(c *gin.Context) {
